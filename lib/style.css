@@ -23,8 +23,11 @@ h4 {
   font-family: Arial, sans-serif;
   text-align: left;
   padding-bottom: 15px;
-  padding-left: 85px
+  color: #000000;
+  margin-left: 0;
+  padding-left: 0;
 }
+
 
 /* Botones de agendar cita */
 button {
