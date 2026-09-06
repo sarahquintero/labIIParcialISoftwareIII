@@ -1,0 +1,77 @@
+/* Estilos generales para todos los elementos (color de la fuente) */
+* {
+  color: rgb(241, 241, 241);
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #6da1d9;
+  color: white;
+}
+
+/* Estilos específicos para títulos h3 y h4 */
+h3 {
+  text-align: center;
+  margin: 0px 0 0 0;
+  font-family: Arial, sans-serif;
+  padding: 0
+}
+
+h4 {
+  font-family: Arial, sans-serif;
+  text-align: left;
+  padding-bottom: 15px;
+  padding-left: 85px
+}
+
+/* Botones de agendar cita */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 0;
+}
+
+/* Tarjeta del medico tipo 1 fondo rojo*/
+#medico1 {
+  background-color: #ca5f86;
+  border-radius: 5px;
+  border: 2px solid red;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+}
+
+/* Tarjeta del medico tipo 2 fondo verde*/
+#medico2 {
+  background-color: #cbe79c;
+  border-radius: 5px;
+  border: 2px solid darkgreen;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+}
+
+/* Tarjeta del medico tipo 3 fondo azul*/
+#medico3 {
+  background-color: #a2b9e6;
+  border-radius: 5px;
+  border: 2px solid darkblue;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+}
+
+/* Contenedor en formato grid para organizar las tarjetas de presentacion de los medicos*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 10px;
+  text-align: center;
+}
