@@ -19,7 +19,7 @@ function validarLongitud(campo, errorElement, min, max, mensaje) {
     }
 }
 
-function validarCorreo(campo, errorElement,mensaje) {
+function validarCorreo(campo, errorElement, mensaje) {
     const correoRegex = /^[a-zA-Z0-9._%+-]+@unicauca\.edu\.co$/;
     if (!correoRegex.test(campo.value)) {
         errorElement.textContent = mensaje;
@@ -74,64 +74,71 @@ function validarFormulario() {
     const inputApellidos = document.getElementById('apellidos');
     const inputCorreoElectronico = document.getElementById('correo-electronico');
     const inputGenero = document.getElementsByName('genero');
+    const inputMedico = document.getElementById('medico');
+    const inputFechaNacimiento = document.getElementById('fecha-nacimiento');
 
-    const labelErrorTipoIdentificacion=document.getElementById('errorTipoIdentificacion');
-    const labelErrorNumeroIdentificacion=document.getElementById('errorNumeroIdentificacion');
-    const labelErrorNombres=document.getElementById('errorNombres');
-    const labelErrorApellidos=document.getElementById('errorApellidos');
-    const labelErrorCorreo=document.getElementById('errorCorreo');
-    const labelErrorGenero=document.getElementById('errorGenero');
+    const labelErrorTipoIdentificacion = document.getElementById('errorTipoIdentificacion');
+    const labelErrorNumeroIdentificacion = document.getElementById('errorNumeroIdentificacion');
+    const labelErrorNombres = document.getElementById('errorNombres');
+    const labelErrorApellidos = document.getElementById('errorApellidos');
+    const labelErrorCorreo = document.getElementById('errorCorreo');
+    const labelErrorGenero = document.getElementById('errorGenero');
+    const labelErrorMedico = document.getElementById('errorMedico');
+    const labelErrorFechaNacimiento = document.getElementById('errorFechaNacimiento');
 
-    const tipoIdentificacionValida=validarCampoObligatorio(inputTipoIdentificacion,labelErrorTipoIdentificacion,"El tipo de identificación es obligatorio");
-    const identificacionValida = validarCampoObligatorio(inputIdentificacion,labelErrorNumeroIdentificacion, 'La identificación es obligatoria');
-    const nombresValidos = validarLongitud(inputNombres,labelErrorNombres , 1, 20, 'El nombre debe tener entre 1 y 20 caracteres');
-    const apellidosValidos = validarLongitud(inputApellidos,labelErrorApellidos , 1, 20, 'El apellido debe tener entre 1 y 20 caracteres');
-    const correoValido = validarCorreo(inputCorreoElectronico, labelErrorCorreo,'El correo debe tener el dominio @unicauca.edu.co');
-    const generoValido = validarGenero(inputGenero,labelErrorGenero,'El género es obligatorio' );
+    const tipoIdentificacionValida = validarCampoObligatorio(inputTipoIdentificacion, labelErrorTipoIdentificacion, "El tipo de identificación es obligatorio");
+    const identificacionValida = validarLongitud(inputIdentificacion, labelErrorNumeroIdentificacion, 6, 15, 'La identificación debe tener entre 6 y 15 caracteres');
+    const nombresValidos = validarLongitud(inputNombres, labelErrorNombres, 3, 20, 'El nombre debe tener entre 3 y 20 caracteres');
+    const apellidosValidos = validarLongitud(inputApellidos, labelErrorApellidos, 3, 20, 'El apellido debe tener entre 3 y 20 caracteres');
+    const correoValido = validarCorreo(inputCorreoElectronico, labelErrorCorreo, 'El correo debe tener el dominio @unicauca.edu.co');
+    const generoValido = validarGenero(inputGenero, labelErrorGenero, 'El género es obligatorio');
+    const medicoValido = validarCampoObligatorio(inputMedico, labelErrorMedico, 'El médico es obligatorio');
+    const fechaNacimientoValida = validarCampoObligatorio(inputFechaNacimiento, labelErrorFechaNacimiento, 'La fecha de nacimiento es obligatoria');
 
     // Si todas las validaciones son correctas, se devuelve true y se puede enviar el formulario al servidor
-    if (tipoIdentificacionValida && identificacionValida && nombresValidos && apellidosValidos && correoValido && generoValido) {
-        mostrarMensajeExito(); 
-        const formulario = document.getElementById('formularioContacto'); 
-        formulario.scrollIntoView({ behavior: "smooth", block: "start" });  
-        formulario.classList.add("was-validated");      
+    if (tipoIdentificacionValida && identificacionValida && nombresValidos && apellidosValidos && correoValido && generoValido && medicoValido && fechaNacimientoValida) {
+        mostrarMensajeExito();
+        const formulario = document.getElementById('formularioContacto');
+        formulario.scrollIntoView({ behavior: "smooth", block: "start" });
+        formulario.classList.add("was-validated");
         setTimeout(() => {
             formulario.reset();
         }, 2000);
-        return false; // Evita el envío del formulario
+        return false;
     } else {
-       
         alert('Por favor, complete correctamente el formulario.');
-        return false; // Bloquea el envío del formulario
+        return false;
     }
 }
 
-function validarCamposAlCambiarFoco()
-{
+function validarCamposAlCambiarFoco() {
     const inputTipoIdentificacion = document.getElementById('identificacion');
     const inputIdentificacion = document.getElementById('numero-identificacion');
     const inputNombres = document.getElementById('nombres');
     const inputApellidos = document.getElementById('apellidos');
     const inputCorreoElectronico = document.getElementById('correo-electronico');
     const inputGenero = document.getElementsByName('genero');
+    const inputMedico = document.getElementById('medico');
+    const inputFechaNacimiento = document.getElementById('fecha-nacimiento');
 
-    const labelErrorTipoIdentificacion=document.getElementById('errorTipoIdentificacion');
-    const labelErrorNumeroIdentificacion=document.getElementById('errorNumeroIdentificacion');
-    const labelErrorNombres=document.getElementById('errorNombres');
-    const labelErrorApellidos=document.getElementById('errorApellidos');
-    const labelErrorCorreo=document.getElementById('errorCorreo');
-    const labelErrorGenero=document.getElementById('errorGenero');
+    const labelErrorTipoIdentificacion = document.getElementById('errorTipoIdentificacion');
+    const labelErrorNumeroIdentificacion = document.getElementById('errorNumeroIdentificacion');
+    const labelErrorNombres = document.getElementById('errorNombres');
+    const labelErrorApellidos = document.getElementById('errorApellidos');
+    const labelErrorCorreo = document.getElementById('errorCorreo');
+    const labelErrorGenero = document.getElementById('errorGenero');
+    const labelErrorMedico = document.getElementById('errorMedico');
+    const labelErrorFechaNacimiento = document.getElementById('errorFechaNacimiento');
 
-    inputTipoIdentificacion.addEventListener('blur',()=> validarCampoObligatorio(
-        inputTipoIdentificacion,
-        labelErrorTipoIdentificacion,
-        "El tipo de identificación es obligatorio"));
-        
+    inputTipoIdentificacion.addEventListener('blur', () => validarCampoObligatorio(inputTipoIdentificacion, labelErrorTipoIdentificacion, "El tipo de identificación es obligatorio"));
     inputIdentificacion.addEventListener('blur', () => validarCampoObligatorio(inputIdentificacion, labelErrorNumeroIdentificacion, 'El número de id es obligatorio.'));
-    inputNombres.addEventListener('blur', () => validarLongitud(inputNombres, labelErrorNombres, 1, 20, 'El nombre debe tener entre 1 y 20 caracteres.'));
-    inputApellidos.addEventListener('blur', () => validarLongitud(inputApellidos, labelErrorApellidos, 1, 20, 'El apellido debe tener entre 1 y 20 caracteres.'));
-    inputCorreoElectronico.addEventListener('blur', () => validarCorreo(inputCorreoElectronico, labelErrorCorreo,'El correo debe tener el dominio @unicauca.edu.co'));
-    Array.from(inputGenero).forEach(input => input.addEventListener('blur', () => validarGenero(inputGenero, labelErrorGenero,'El género es obligatorio')));
+    inputIdentificacion.addEventListener('blur', () => validarLongitud( inputIdentificacion, labelErrorNumeroIdentificacion, 6, 15, 'La identificación debe tener entre 6 y 15 caracteres'));
+    inputNombres.addEventListener('blur', () => validarLongitud(inputNombres, labelErrorNombres, 3, 20, 'El nombre debe tener entre 3 y 20 caracteres.'));
+    inputApellidos.addEventListener('blur', () => validarLongitud(inputApellidos, labelErrorApellidos, 3, 20, 'El apellido debe tener entre 3 y 20 caracteres.'));
+    inputCorreoElectronico.addEventListener('blur', () => validarCorreo(inputCorreoElectronico, labelErrorCorreo, 'El correo debe tener el dominio @unicauca.edu.co'));
+    inputFechaNacimiento.addEventListener('blur', () => validarCampoObligatorio(inputFechaNacimiento, labelErrorFechaNacimiento, 'La fecha de nacimiento es obligatoria'));
+    inputMedico.addEventListener('blur', () => validarCampoObligatorio(inputMedico, labelErrorMedico, 'El médico es obligatorio'));
+    Array.from(inputGenero).forEach(input => input.addEventListener('blur', () => validarGenero(inputGenero, labelErrorGenero, 'El género es obligatorio')));
 }
 
 document.addEventListener('DOMContentLoaded', validarCamposAlCambiarFoco);

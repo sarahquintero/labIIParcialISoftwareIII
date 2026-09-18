@@ -78,3 +78,7 @@ button {
   gap: 10px;
   text-align: center;
 }
+
+select option {
+  color: #000000; /* negro */
+}
