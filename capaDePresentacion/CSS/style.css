@@ -1,0 +1,26 @@
+/* estilos.css */
+header {
+    background-color: #0d6efd; /* Azul primario de Bootstrap */
+    color: white;
+    padding: 2rem 0;
+}
+
+.social-icons a {
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Ajustes para las imágenes del carrusel */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Ajuste para las tarjetas de médicos */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

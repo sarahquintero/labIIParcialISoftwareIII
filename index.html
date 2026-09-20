@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Clínica - Médicos disponibles</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="lib/style.css" />
-  <script src="validacion.js"></script>
-</head>
+  <link rel="stylesheet" href="capaDePresentacion/CSS/style.css" />
 
+</head>
 
 <body>
   <header>
@@ -24,7 +24,6 @@
       </div>
     </div>
   </header>
-
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
@@ -45,13 +44,11 @@
     </div>
   </nav>
 
-
   <!-- Sección 1: Carrusel de promociones -->
   <section id="promociones" class="p-0 m-0">
     <div class="container-fluid p-0">
       <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <!-- Imagen 1 -->
           <div class="carousel-item active">
             <img
               src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
@@ -61,7 +58,6 @@
               <p class="text-dark">Promoción especial en consultas médicas generales.</p>
             </div>
           </div>
-          <!-- Imagen 2 -->
           <div class="carousel-item">
             <img
               src="https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -71,7 +67,6 @@
               <p class="text-dark">Descuentos en fisioterapia y rehabilitación.</p>
             </div>
           </div>
-          <!-- Imagen 3 -->
           <div class="carousel-item">
             <img
               src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
@@ -82,7 +77,6 @@
             </div>
           </div>
         </div>
-        <!-- Controles -->
         <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
@@ -93,37 +87,24 @@
     </div>
   </section>
 
-
-
   <!-- Sección 2: Médicos -->
   <section id="medicos" class="my-5">
     <div class="container-fluid">
       <div class="row">
-
         <!-- Barra lateral -->
         <aside class="col-12 col-sm-2 col-md-4 mb-3">
           <h4 class="mb-3 text-start text-dark">Especialidades</h4>
           <div class="list-group">
             <a href="#terapianeural" class="list-group-item list-group-item-action text-dark"
-              onclick="mostrarDescripcion('terapia')">
-              Terapia Neural
-            </a>
+              onclick="mostrarDescripcion('terapia')">Terapia Neural</a>
             <a href="#quiropractica" class="list-group-item list-group-item-action text-dark"
-              onclick="mostrarDescripcion('quiropractica')">
-              Quiropraxia
-            </a>
+              onclick="mostrarDescripcion('quiropractica')">Quiropraxia</a>
             <a href="#fisioterapia" class="list-group-item list-group-item-action text-dark"
-              onclick="mostrarDescripcion('fisioterapia')">
-              Fisioterapia
-            </a>
+              onclick="mostrarDescripcion('fisioterapia')">Fisioterapia</a>
             <a href="#nutricion" class="list-group-item list-group-item-action text-dark"
-              onclick="mostrarDescripcion('nutricion')">
-              Nutrición y Dietética Terapéutica
-            </a>
+              onclick="mostrarDescripcion('nutricion')">Nutrición y Dietética Terapéutica</a>
           </div>
 
-
-          <!-- Descripciones ya escritas en HTML -->
           <div id="descripcionEspecialidad" class="mt-3 text-dark">
             <div id="desc-terapia" style="display:none;">
               <p class="text-dark">La Terapia Neural regula el sistema nervioso mediante anestésicos locales.</p>
@@ -143,34 +124,22 @@
         </aside>
 
 
-        <script>
-          function mostrarDescripcion(especialidad) {
-            document.getElementById("desc-terapia").style.display = "none";
-            document.getElementById("desc-quiropractica").style.display = "none";
-            document.getElementById("desc-fisioterapia").style.display = "none";
-            document.getElementById("desc-nutricion").style.display = "none";
-
-            document.getElementById("desc-" + especialidad).style.display = "block";
-          }
-        </script>
-
-
 
         <!-- Cartas de médicos -->
         <div class="col-12 col-sm-10 col-md-8">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-            <!-- Médico 1 -->
             <div class="col">
               <div class="card h-100">
                 <img src="Medico.png" class="card-img-top img-fluid" alt="Doctor 1">
                 <div class="card-body">
                   <h5 class="card-title">Dr. Juan Pérez</h5>
                   <p class="card-text text-dark">Especialista en Terapia Neural. Comprometido con tu bienestar.</p>
-                  <button class="btn btn-primary">Agendar Cita</button>
+                  <button class="btn btn-primary" onclick="location.href='#registro'">
+                    Agendar Cita
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- Médico 2 -->
             <div class="col">
               <div class="card h-100">
                 <img src="Medica.png" class="card-img-top img-fluid" alt="Doctor 2">
@@ -178,29 +147,33 @@
                   <h5 class="card-title">Dra. Catalina Sánchez</h5>
                   <p class="card-text text-dark">Especialista en Fisioterapia Deportiva. Tu recuperación es su
                     prioridad.</p>
-                  <button class="btn btn-primary">Agendar Cita</button>
+                  <button class="btn btn-primary" onclick="location.href='#registro'">
+                    Agendar Cita
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- Médico 3 -->
             <div class="col">
               <div class="card h-100">
                 <img src="Medico.png" class="card-img-top img-fluid" alt="Doctor 3">
                 <div class="card-body">
                   <h5 class="card-title">Dr. Andrés Cardozo</h5>
                   <p class="card-text text-dark">Especialista en Quiropraxia. Enfocado en tu salud integral.</p>
-                  <button class="btn btn-primary">Agendar Cita</button>
+                  <button class="btn btn-primary" onclick="location.href='#registro'">
+                    Agendar Cita
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- Médico 4 -->
             <div class="col">
               <div class="card h-100">
                 <img src="Medica.png" class="card-img-top img-fluid" alt="Doctor 4">
                 <div class="card-body">
                   <h5 class="card-title">Dra. Laura Gómez</h5>
                   <p class="card-text text-dark">Especialista en Nutrición y Dietética Terapéutica.</p>
-                  <button class="btn btn-primary">Agendar Cita</button>
+                  <button class="btn btn-primary" onclick="location.href='#registro'">
+                    Agendar Cita
+                  </button>
                 </div>
               </div>
             </div>
@@ -213,15 +186,13 @@
   <!-- Sección 3: Registro de pacientes -->
   <section id="registro" class="my-5">
     <h2 class="text-center mb-4 text-dark">Registro de Pacientes</h2>
-    <p class="lead text-center text-dark">
-      Complete el siguiente formulario para registrarse en la clínica y poder agendar sus citas.
-    </p>
+    <p class="lead text-center text-dark">Complete el siguiente formulario para registrarse en la clínica y poder
+      agendar sus citas.</p>
 
-    <form id="formPaciente" onsubmit="return validarFormulario()">
-      <!-- Tipo de Identificación -->
-      <div class="mb-3" text-dark>
-        <label for="identificacion" class="form-label text-dark">Tipo de Identificación:</label>
-        <select id="identificacion" name="tipo-identificacion" class="form-select text-dark">
+    <form id="formPaciente">
+      <div class="mb-3">
+        <label for="tipoIdentificacion" class="form-label text-dark">Tipo de Identificación:</label>
+        <select id="tipoIdentificacion" name="tipoIdentificacion" class="form-select text-dark">
           <option value="" disabled selected>Seleccione un tipo de identificación</option>
           <option value="cc">Cédula de Ciudadanía</option>
           <option value="ti">Tarjeta de Identidad</option>
@@ -232,30 +203,18 @@
       </div>
 
       <div class="mb-3">
-        <label for="nombresPaciente" class="form-label text-dark">Nombres:</label>
-        <input type="text" id="nombresPaciente" class="form-control text-dark" required>
-      </div>
-      <div class="mb-3">
-        <label for="apellidosPaciente" class="form-label text-dark">Apellidos:</label>
-        <input type="text" id="apellidosPaciente" class="form-control text-dark" required>
-      </div>
-
-      <!-- Número de Identificación -->
-      <div class="mb-3">
-        <label for="numero-identificacion" class="form-label text-dark">Número de Identificación:</label>
-        <input type="text" id="numero-identificacion" name="numero-identificacion" class="form-control text-dark"
+        <label for="identificacion" class="form-label text-dark">Número de Identificación:</label>
+        <input type="text" id="identificacion" name="identificacion" class="form-control text-dark"
           placeholder="Número de identificación">
-        <label class="text-danger form-text" id="errorNumeroIdentificacion"></label>
+        <label class="text-danger form-text" id="errorIdentificacion"></label>
       </div>
 
-      <!-- Nombres -->
       <div class="mb-3">
         <label for="nombres" class="form-label text-dark">Nombres:</label>
         <input type="text" id="nombres" name="nombres" class="form-control text-dark" placeholder="Nombres del usuario">
         <label class="text-danger form-text" id="errorNombres"></label>
       </div>
 
-      <!-- Apellidos -->
       <div class="mb-3">
         <label for="apellidos" class="form-label text-dark">Apellidos:</label>
         <input type="text" id="apellidos" name="apellidos" class="form-control text-dark"
@@ -263,15 +222,12 @@
         <label class="text-danger form-text" id="errorApellidos"></label>
       </div>
 
-      <!-- Correo electrónico -->
       <div class="mb-3">
-        <label for="correo-electronico" class="form-label text-dark">Correo Electrónico:</label>
-        <input type="email" id="correo-electronico" name="correo-electronico" class="form-control text-dark"
-          placeholder="correo@ejemplo.com">
+        <label for="correo" class="form-label text-dark">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" class="form-control text-dark" placeholder="correo@ejemplo.com">
         <label class="text-danger form-text" id="errorCorreo"></label>
       </div>
 
-      <!-- Género -->
       <fieldset class="mb-3">
         <legend class="form-label text-dark">Género:</legend>
         <div class="form-check form-check-inline">
@@ -289,62 +245,130 @@
         <label class="text-danger form-text" id="errorGenero"></label>
       </fieldset>
 
-      <!-- Fecha de nacimiento -->
       <div class="mb-3">
-        <label for="fecha-nacimiento" class="form-label text-dark">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" class="form-control text-dark">
+        <label for="fechaNacimiento" class="form-label text-dark">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control text-dark">
         <label class="text-danger form-text" id="errorFechaNacimiento"></label>
       </div>
-
 
       <button type="submit" class="btn btn-primary">Registrar Paciente</button>
     </form>
 
+    <h2 class="text-center mb-4 text-dark mt-5">Registro de Médicos</h2>
+    <form id="formMedico" class="mb-5">
+      <div class="mb-3">
+        <label for="nombresMedico" class="form-label text-dark">Nombres:</label>
+        <input type="text" id="nombresMedico" name="nombresMedico" class="form-control text-dark" placeholder="Nombres"
+          required>
+        <label class="text-danger form-text" id="errorNombresMedico"></label>
+      </div>
 
+      <div class="mb-3">
+        <label for="apellidosMedico" class="form-label text-dark">Apellidos:</label>
+        <input type="text" id="apellidosMedico" name="apellidosMedico" class="form-control text-dark"
+          placeholder="Apellidos" required>
+        <label class="text-danger form-text" id="errorApellidosMedico"></label>
+      </div>
 
+      <div class="mb-3">
+        <label for="especialidad" class="form-label text-dark">Especialidad:</label>
+        <input type="text" id="especialidad" name="especialidad" class="form-control text-dark"
+          placeholder="Especialidad" required>
+        <label class="text-danger form-text" id="errorEspecialidad"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="horario" class="form-label text-dark">Horario de atención:</label>
+        <input type="text" id="horario" name="horario" class="form-control text-dark"
+          placeholder="Ej: Lunes a Viernes 8am-4pm" required>
+        <label class="text-danger form-text" id="errorHorario"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="experiencia" class="form-label text-dark">Años de experiencia:</label>
+        <input type="number" id="experiencia" name="experiencia" class="form-control text-dark" min="0"
+          placeholder="Años de experiencia" required>
+        <label class="text-danger form-text" id="errorExperiencia"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="bibliografia" class="form-label text-dark">Bibliografía:</label>
+        <textarea id="bibliografia" name="bibliografia" class="form-control text-dark"
+          placeholder="Breve descripción del médico"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Registrar Médico</button>
+    </form>
 
     <h2 class="text-center mb-4 text-dark">Registro de Citas</h2>
     <form id="formCitas">
       <div class="mb-3">
         <label for="fecha" class="form-label text-dark">Fecha:</label>
-        <input type="date" id="fecha" class="form-control text-dark" required>
-      </div>
-      <div class="mb-3">
-        <label for="horaInicio" class="form-label text-dark">Hora Inicio:</label>
-        <input type="time" id="horaInicio" class="form-control text-dark" required>
-      </div>
-      <div class="mb-3">
-        <label for="horaFin" class="form-label text-dark">Hora Fin:</label>
-        <input type="time" id="horaFin" class="form-control text-dark" required>
-      </div>
-      <div class="mb-3">
-        <label for="pacienteSelect" class="form-label text-dark">Paciente:</label>
-        <select id="pacienteSelect" class="form-select text-dark" required>
-          <option value="" disabled selected>Seleccione un paciente</option>
-          <!-- Aquí se llenan dinámicamente los pacientes -->
-        </select>
+        <input type="date" id="fecha" name="fecha" class="form-control text-dark" required>
+        <label class="text-danger form-text" id="errorFecha"></label>
       </div>
 
       <div class="mb-3">
-        <label for="medico" class="form-label text-dark">Seleccione su médico:</label>
-        <select id="medico" name="medico" class="form-select text-dark">
+        <label for="horaInicio" class="form-label text-dark">Hora Inicio:</label>
+        <input type="time" id="horaInicio" name="horaInicio" class="form-control text-dark" required>
+        <label class="text-danger form-text" id="errorHoraInicio"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="horaFin" class="form-label text-dark">Hora Fin:</label>
+        <input type="time" id="horaFin" name="horaFin" class="form-control text-dark" required>
+        <label class="text-danger form-text" id="errorHoraFin"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="pacienteSelect" class="form-label text-dark">Paciente:</label>
+        <select id="pacienteSelect" name="pacienteSelect" class="form-select text-dark" required>
+          <option value="" disabled selected>Seleccione un paciente</option>
+        </select>
+        <label class="text-danger form-text" id="errorPaciente"></label>
+      </div>
+
+      <div class="mb-3">
+        <label for="medicoSelect" class="form-label text-dark">Seleccione su médico:</label>
+        <select id="medicoSelect" name="medicoSelect" class="form-select text-dark" required>
           <option value="" disabled selected>Seleccione un médico</option>
-          <option value="dr-perez">Juan Perez</option>
-          <option value="dra-sanchez">Catalina Sanchez</option>
-          <option value="dr-cardozo">Andres Cardozo</option>
-          <option value="dr-gomez">Laura Gómez</option>
         </select>
         <label class="text-danger form-text" id="errorMedico"></label>
       </div>
-      <button type="submit" class="btn btn-primary">Registrar Cita</button>
+
+      <button id="btnAgregarCita" type="submit" class="btn btn-primary">Registrar Cita</button>
     </form>
+
+
+    <h3>Pacientes registrados</h3>
+    <pre id="listaPacientes"></pre>
+
+    <h3>Médicos registrados</h3>
+    <pre id="listaMedicos"></pre>
+
+    <h3>Citas registradas</h3>
+    <pre id="listaCitas"></pre>
+
+
+
+    <!-- Tabla de citas registradas -->
+    <h3 class="mt-4 text-dark">Citas Registradas</h3>
+    <table class="table table-striped table-bordered mt-2">
+      <thead class="table-primary">
+        <tr>
+          <th>Id Cita</th>
+          <th>Fecha</th>
+          <th>Hora Inicio</th>
+          <th>Hora Fin</th>
+          <th>Paciente</th>
+          <th>Médico</th>
+        </tr>
+      </thead>
+      <tbody id="tablaCitas">
+      </tbody>
+    </table>
+
   </section>
-
-
-
-
-
-
 
 
 
@@ -353,24 +377,43 @@
     <div class="container-fluid text-center">
       <p class="mb-3">© 2026 Clínica Salud Integral - Todos los derechos reservados</p>
       <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.twitter.com" target="_blank" class="text-white mx-2">
-          <i class="fab fa-twitter fa-2x"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
-          <i class="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" class="text-white mx-2">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
+        <a href="https://www.facebook.com" target="_blank" class="text-white mx-2"><i
+            class="fab fa-facebook fa-2x"></i></a>
+        <a href="https://www.twitter.com" target="_blank" class="text-white mx-2"><i
+            class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="text-white mx-2"><i
+            class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="text-white mx-2"><i
+            class="fab fa-linkedin fa-2x"></i></a>
       </div>
     </div>
   </footer>
 
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Entities -->
+  <script src="capaDeAccesoADatos/entities/Paciente.js"></script>
+  <script src="capaDeAccesoADatos/entities/Medico.js"></script>
+  <script src="capaDeAccesoADatos/entities/Cita.js"></script>
+
+  <!-- Repositories -->
+  <script src="capaDeAccesoADatos/repositories/PacienteRepository.js"></script>
+  <script src="capaDeAccesoADatos/repositories/MedicoRepository.js"></script>
+  <script src="capaDeAccesoADatos/repositories/CitaRepository.js"></script>
+
+  <!-- Services -->
+  <script src="fachadaServices/gestionarPacientesServices.js"></script>
+  <script src="fachadaServices/gestionarMedicosServices.js"></script>
+  <script src="fachadaServices/gestionarCitasServices.js"></script>
+
+  <!-- Presentación -->
+  <script src="capaDePresentacion/notificaciones.js"></script>
+  <script src="capaDePresentacion/logicaEspecialidades.js"></script>
+  <script src="capaDePresentacion/logicaPaciente.js"></script>
+  <script src="capaDePresentacion/logicaMedico.js"></script>
+  <script src="capaDePresentacion/logicaCita.js"></script>
+  <script src="capaDePresentacion/validacion.js"></script>
+
 </body>
 
 </html>
